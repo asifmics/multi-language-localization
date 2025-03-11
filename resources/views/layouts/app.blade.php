@@ -13,6 +13,15 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <style>
+            @font-face {
+                font-family: "SolaimanLipi";
+                src: url("{{ asset('fonts/SolaimanLipi_22-02-2012.ttf') }}") format("truetype");
+            }
+            .font-SolaimanLipi{
+                font-family: "SolaimanLipi";
+            }
+            </style>
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">

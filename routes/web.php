@@ -1,17 +1,17 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PdfDownloadController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/','dashboard' );
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
     Route::resource('/posts',PostController::class)->only(['index']);
+    Route::get('/posts/download',PdfDownloadController::class)->name('posts.pdf.download');
 });
 
 

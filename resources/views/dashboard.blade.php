@@ -11,8 +11,8 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <div class="flex flex-row justify-between">
                         <h2 class="text-black text-xl">Those are my posts</h2>
-                        <button class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 float-end mb-2">
-                            pdf download
+                        <button class="bg-lime-600 text-white px-3 py-1 rounded hover:bg-lime-500 float-end mb-2">
+                            excel download
                         </button>
                     </div>
                     <div class="w-full mx-auto bg-white shadow-md rounded-lg overflow-hidden">

@@ -22,7 +22,7 @@ class PostFactory extends Factory
             'description' => $this->faker->paragraphs(3, true),
             'image' => $this->faker->imageUrl(),
             'status' => $this->faker->boolean(),
-            'user_id' => $this->faker->numberBetween(1, 10000),
+            'user_id' => $this->faker->numberBetween(1, 4),
         ];
     }
 }

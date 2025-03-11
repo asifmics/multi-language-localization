@@ -4,14 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class DashboardController extends Controller
 {
-    public function index()
+    public function index(): view
     {
-        $user = User::where('id', auth()->id())->with('posts')->first();
         return view('dashboard', [
-            'user' => $user
+            'user' => User::where('id', auth()->id())
+                ->with('posts', function ($q) {
+                    $q->paginate(20);
+                })->first(),
         ]);
     }
 }

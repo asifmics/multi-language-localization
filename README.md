@@ -32,3 +32,8 @@ npm run dev
 test@example.com
 password
 ```
+
+#### Laravel localization use for run this command
+```
+php artisan lang:publish
+```

@@ -1500,7 +1500,7 @@
                     <!-- Dropdown Button -->
                     <button @click="open = !open"
                             class="px-4 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-lg text-sm leading-normal">
-                        Language <span class="capitalize"> \ {{ session('locale') }}</span>
+                        Language <span class="capitalize"> \ {{ session('locale') ?? config('app.locale') }}</span>
                     </button>
 
                     <!-- Dropdown Menu -->

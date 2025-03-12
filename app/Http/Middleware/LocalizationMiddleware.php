@@ -17,8 +17,7 @@ class LocalizationMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-
-        $locale = \session()->get('locale') ?? config('app.locale');
+        $locale = session()->get('locale') ?? config('app.locale');
         session()->put('locale', $locale);
         app()->setLocale($locale);
 

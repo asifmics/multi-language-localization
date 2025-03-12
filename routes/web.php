@@ -1,12 +1,16 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LocalizationController;
 use App\Http\Controllers\PdfDownloadController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
-Route::redirect('/','dashboard' );
+Route::get('/', function () {
+    return view('/welcome');
+});
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
@@ -20,5 +24,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::get('/locale/{locale}',LocalizationController::class)->name('locale');
 
 require __DIR__.'/auth.php';
